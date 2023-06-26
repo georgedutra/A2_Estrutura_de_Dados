@@ -20,29 +20,33 @@ int main()
     cout << "===================================================\n" 
     << "Início dos Testes\n"
     <<"===================================================\n"
-    << "Teste das Funções newTree e newTreeNode:\n"
-    <<"Criando uma árvore com um único nó contendo o número 10 e imprimindo seu conteúdo.\n" 
+    << "Teste da função newTreeNode:\n"
+    <<"Criando um nó contendo o número 10 e imprimindo seu conteúdo.\n" 
     << endl;
 
-    BinaryTree* testTree = newTree();
-    testTree->ptrRoot = newTreeNode(10);
-    cout << "Conteúdo do nó gerado: " << testTree->ptrRoot->iPayload << endl;
+    TreeNode* testRoot = newTreeNode(10);
+    cout << "Conteúdo do nó gerado: " << testRoot->iPayload << endl;
     
-    delete(testTree->ptrRoot);
-    testTree->ptrRoot = nullptr;
+    delete(testRoot);
+    testRoot = nullptr;
 
     cout << "===================================================\n"
     << "Teste das funções insertTreeNode e Traverse:\n"
     << "Inserindo os nós 7, 10, 15 e 1 numa árvore vazia, nessa ordem.\n"
     << endl;
 
-    testTree->ptrRoot = insertTreeNode(testTree->ptrRoot, 7);
-    insertTreeNode(testTree->ptrRoot, 10);
-    insertTreeNode(testTree->ptrRoot, 15);
-    insertTreeNode(testTree->ptrRoot, 1);
+    testRoot = insertTreeNode(testRoot, 7);
+    insertTreeNode(testRoot, 10);
+    insertTreeNode(testRoot, 15);
+    insertTreeNode(testRoot, 1);
 
-    cout << testTree->ptrRoot->iPayload << testTree->ptrRoot->ptrLeft->iPayload
-    << testTree->ptrRoot->ptrRight->iPayload << testTree->ptrRoot->ptrRight->ptrRight->iPayload << endl;
+    cout << "Travessia Pré-Ordem:\n";
+    traversePreOrder(testRoot);
+    cout << "\n\nTravessia Em Ordem:\n";
+    traverseInOrder(testRoot);
+    cout << "\n\nTravessia Pós-Ordem:\n";
+    traversePostOrder(testRoot);
+    cout << endl;
 
     cout << "===================================================\n" 
     << "Fim dos Testes\n"
