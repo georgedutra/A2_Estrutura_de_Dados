@@ -1,3 +1,9 @@
+/**
+ * Este arquivo 'source' é parte do projeto {{ A2_Estrutura_de_Dados }}.
+ * 
+ * Tem como objetivo guardar as definições das funções necessárias para construção e manipulação de árvores binárias de busca.
+*/
+
 #include <iostream>
 #include "tree.h"
 

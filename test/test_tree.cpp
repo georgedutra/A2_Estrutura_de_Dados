@@ -18,7 +18,8 @@ int main()
     SetConsoleOutputCP( 65001 ); // Definindo console output como UTF-8
 
     cout << "===================================================\n" 
-    << "Início dos Testes\n" <<"===================================================" << endl;
+    << "Início dos Testes\n" 
+    <<"===================================================" << endl;
 
     cout << "Teste da função newTreeNode:\n"
     <<"Criando um nó contendo o número 10 e imprimindo seu conteúdo.\n" 
