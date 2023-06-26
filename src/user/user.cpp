@@ -63,3 +63,21 @@ struct TreeNode* userInsertNode(struct TreeNode* ptrTree)
 
     return insertTreeNode(ptrTree, stoi(strInput));
 }
+
+struct TreeNode* userDeleteNode(struct TreeNode* ptrTree)
+{
+    string strInput;
+
+    cout << "Digite o número que deseja remover da árvore:\n> ";
+    cin >> strInput;
+    cout << endl;
+
+    if (strInput.empty() || strInput.find_first_not_of("-0123456789") != string::npos)
+    {
+        cout << "Valor inserido inválido. Abortando operação." << endl;
+        return ptrTree;
+    }
+
+    return deleteTreeNode(ptrTree, stoi(strInput));
+}
+

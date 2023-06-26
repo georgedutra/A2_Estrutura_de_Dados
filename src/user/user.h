@@ -18,3 +18,12 @@ struct TreeNode* userCreateTree();
  * @param ptrTree Ponteiro para o nó raiz da árvore onde o valor será inserido.
 */
 struct TreeNode* userInsertNode(struct TreeNode* ptrTree);
+
+/**
+ * Função de interface que remove um valor inserido pelo usuário.
+ * 
+ * Se o valor 
+ * 
+ * @param ptrTree Ponteiro para o nó raiz da árvore de onde o valor será removido.
+*/
+struct TreeNode* userDeleteNode(struct TreeNode* ptrTree);

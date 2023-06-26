@@ -30,6 +30,7 @@ int main()
         << "0 - Encerrar testes\n"
         << "1 - Teste da função de Criação de Árvore\n"
         << "2 - Teste da função de Inserção de Nó\n"
+        << "3 - Teste da função de Remoção de Nó\n"
         << "> ";
 
         cin >> iInput;
@@ -49,6 +50,16 @@ int main()
                 break;
             case 2:
                 ptrTree = userInsertNode(ptrTree);
+                if (ptrTree == nullptr) cout << "Árvore vazia :(" << endl;
+                else
+                {
+                    cout << "Travessia Em Ordem da árvore:" << endl;
+                    traverseInOrder(ptrTree);
+                    cout << "\n" << endl;
+                }
+                break;
+            case 3:
+                ptrTree = userDeleteNode(ptrTree);
                 if (ptrTree == nullptr) cout << "Árvore vazia :(" << endl;
                 else
                 {
