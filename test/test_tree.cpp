@@ -62,6 +62,69 @@ int main()
     cout << "\nBuscando o número 5 (Não está na árvore)\n" << endl;
     cout << "Endereço encontrado: " << searchNode(testRoot, 5) << endl;
 
+    cout << "===================================================\n"
+    << "Teste da função deleteNode:\n";
+
+    cout << "Inserindo mais nós..." << endl;
+    testRoot = insertTreeNode(testRoot, 5);
+    testRoot = insertTreeNode(testRoot, 4);
+    testRoot = insertTreeNode(testRoot, 8);
+    testRoot = insertTreeNode(testRoot, 9);
+    testRoot = insertTreeNode(testRoot, 15);
+
+    cout << "\nTravessia Em Ordem:\n";
+    traverseInOrder(testRoot);
+    cout << "\n" << endl;
+    
+    cout << "Deletando o número 20 (não está na árvore)\n"<< endl;
+    testRoot = deleteTreeNode(testRoot, 20);
+
+    cout << "Travessia Em Ordem:\n";
+    traverseInOrder(testRoot);
+    cout << "\n" << endl;
+
+    cout << "Deletando o número 9 (folha)\n"<< endl;
+    testRoot = deleteTreeNode(testRoot, 9);
+
+    cout << "Travessia Em Ordem:\n";
+    traverseInOrder(testRoot);
+    cout << "\n" << endl;
+
+    cout << "Deletando o número 5 (tem filhos à esquerda)\n"<< endl;
+    testRoot = deleteTreeNode(testRoot, 5);
+
+    cout << "Travessia Em Ordem:\n";
+    traverseInOrder(testRoot);
+    cout << "\n" << endl;
+
+    cout << "Deletando o número 1 (tem filhos à direita)\n"<< endl;
+    testRoot = deleteTreeNode(testRoot, 1);
+
+    cout << "Travessia Em Ordem:\n";
+    traverseInOrder(testRoot);
+    cout << "\n" << endl;
+
+    cout << "Deletando o número 15 (duplicata)\n"<< endl;
+    testRoot = deleteTreeNode(testRoot, 15);
+
+    cout << "Travessia Em Ordem:\n";
+    traverseInOrder(testRoot);
+    cout << "\n" << endl;
+
+    cout << "Deletando o número 10 (tem dois filhos)\n"<< endl;
+    testRoot = deleteTreeNode(testRoot, 10);
+
+    cout << "Travessia Em Ordem:\n";
+    traverseInOrder(testRoot);
+    cout << "\n" << endl;
+
+    cout << "Deletando o número 7 (raiz da árvore)\n"<< endl;
+    testRoot = deleteTreeNode(testRoot, 7);
+
+    cout << "Travessia Em Ordem:\n";
+    traverseInOrder(testRoot);
+    cout << "\n" << endl;
+
     cout << "===================================================\n" 
     << "Fim dos Testes\n"
     <<"===================================================\n"
