@@ -53,3 +53,12 @@ void traversePostOrder(struct TreeNode* ptrStartingNode)
     cout << " " << ptrStartingNode->iPayload;
 }
 
+struct TreeNode* searchNode(struct TreeNode* currentNode, int iData)
+{
+    if (currentNode == nullptr) return nullptr; // Caso Base
+
+    else if (currentNode->iPayload == iData) return currentNode; // Se encontrarmos o nó procurado
+
+    else if (iData < currentNode->iPayload) return searchNode(currentNode->ptrLeft, iData);
+    return searchNode(currentNode->ptrRight, iData);
+}

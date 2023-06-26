@@ -18,9 +18,9 @@ int main()
     SetConsoleOutputCP( 65001 ); // Definindo console output como UTF-8
 
     cout << "===================================================\n" 
-    << "Início dos Testes\n"
-    <<"===================================================\n"
-    << "Teste da função newTreeNode:\n"
+    << "Início dos Testes\n" <<"===================================================" << endl;
+
+    cout << "Teste da função newTreeNode:\n"
     <<"Criando um nó contendo o número 10 e imprimindo seu conteúdo.\n" 
     << endl;
 
@@ -36,22 +36,36 @@ int main()
     << endl;
 
     testRoot = insertTreeNode(testRoot, 7);
-    insertTreeNode(testRoot, 10);
-    insertTreeNode(testRoot, 15);
-    insertTreeNode(testRoot, 1);
+    testRoot = insertTreeNode(testRoot, 10);
+    testRoot = insertTreeNode(testRoot, 15);
+    testRoot = insertTreeNode(testRoot, 1);
 
     cout << "Travessia Pré-Ordem:\n";
     traversePreOrder(testRoot);
-    cout << "\n\nTravessia Em Ordem:\n";
+    cout << endl;
+
+    cout << "\nTravessia Em Ordem:\n";
     traverseInOrder(testRoot);
-    cout << "\n\nTravessia Pós-Ordem:\n";
+    cout << endl;
+
+    cout << "\nTravessia Pós-Ordem:\n";
     traversePostOrder(testRoot);
     cout << endl;
+
+    cout << "===================================================\n"
+    << "Teste da função searchNode:\n"
+    << "Buscando o número 7\n"
+    << endl;
+
+    cout << "Endereço encontrado: " << searchNode(testRoot, 7) << endl;
+
+    cout << "\nBuscando o número 5 (Não está na árvore)\n" << endl;
+    cout << "Endereço encontrado: " << searchNode(testRoot, 5) << endl;
 
     cout << "===================================================\n" 
     << "Fim dos Testes\n"
     <<"===================================================\n"
-    << "Presione `enter` para sair.";
+    << "Presione enter para sair.";
     cin.get();
 
     return 0;
