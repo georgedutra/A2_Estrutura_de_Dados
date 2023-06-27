@@ -42,3 +42,5 @@ struct TreeNode* userDeleteNode(struct TreeNode* ptrTree);
  * @return Ponteiro para o nó que possui o valor desejado.
 */
 struct TreeNode* userSearchNode(struct TreeNode* ptrTree);
+
+struct TreeNode* userReadFile();

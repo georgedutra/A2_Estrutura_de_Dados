@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <string>
+#include <fstream>
 #include "..\tree\tree.h"
 #include "user.h"
 
@@ -96,4 +97,30 @@ struct TreeNode* userSearchNode(struct TreeNode* ptrTree)
     }
 
     return searchNode(ptrTree, stoi(strInput));
+}
+
+struct TreeNode* userReadFile()
+{
+    string strFileName;
+    cout << "Digite o nome do arquivo inserido na pasta \\data, com a extensão: \n> ";
+    cin >> strFileName;
+    cout << endl;
+
+    ifstream inData;
+    inData.open("..\\data\\" + strFileName);
+    if (!inData)
+    {
+        cout << "Arquivo não encontrado. Abortando operação." << endl;
+        return nullptr;
+    }
+
+    struct TreeNode* ptrNewTree = nullptr;
+
+    int iNum;
+    while (inData >> iNum)
+    {
+        ptrNewTree = insertTreeNode(ptrNewTree, iNum);
+    }
+
+    return ptrNewTree;
 }
