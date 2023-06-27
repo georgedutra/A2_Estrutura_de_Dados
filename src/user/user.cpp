@@ -81,3 +81,19 @@ struct TreeNode* userDeleteNode(struct TreeNode* ptrTree)
     return deleteTreeNode(ptrTree, stoi(strInput));
 }
 
+struct TreeNode* userSearchNode(struct TreeNode* ptrTree)
+{
+    string strInput;
+
+    cout << "Digite o número que deseja encontrar:\n> ";
+    cin >> strInput;
+    cout << endl;
+
+    if (strInput.empty() || strInput.find_first_not_of("-0123456789") != string::npos)
+    {
+        cout << "Valor inserido inválido. Abortando operação." << endl;
+        return nullptr;
+    }
+
+    return searchNode(ptrTree, stoi(strInput));
+}

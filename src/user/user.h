@@ -27,3 +27,5 @@ struct TreeNode* userInsertNode(struct TreeNode* ptrTree);
  * @param ptrTree Ponteiro para o nó raiz da árvore de onde o valor será removido.
 */
 struct TreeNode* userDeleteNode(struct TreeNode* ptrTree);
+
+struct TreeNode* userSearchNode(struct TreeNode* ptrTree);

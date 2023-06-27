@@ -31,6 +31,7 @@ int main()
         << "1 - Teste da função de Criação de Árvore\n"
         << "2 - Teste da função de Inserção de Nó\n"
         << "3 - Teste da função de Remoção de Nó\n"
+        << "4 - Teste da função de Busca de Endereço de Memória\n"
         << "> ";
 
         cin >> iInput;
@@ -48,6 +49,7 @@ int main()
                     cout << "\n" << endl;
                 }
                 break;
+                
             case 2:
                 ptrTree = userInsertNode(ptrTree);
                 if (ptrTree == nullptr) cout << "Árvore vazia :(" << endl;
@@ -58,6 +60,7 @@ int main()
                     cout << "\n" << endl;
                 }
                 break;
+
             case 3:
                 ptrTree = userDeleteNode(ptrTree);
                 if (ptrTree == nullptr) cout << "Árvore vazia :(" << endl;
@@ -67,6 +70,13 @@ int main()
                     traverseInOrder(ptrTree);
                     cout << "\n" << endl;
                 }
+                break;
+
+            case 4:
+                TreeNode* ptrNode = userSearchNode(ptrTree);
+                if (ptrTree == nullptr) cout << "Árvore vazia :(\n" << endl;
+                else if (ptrNode == nullptr) cout << "Valor não encontrado na árvore.\n" << endl;
+                else cout << "Valor encontrado no endereço de memória: " << ptrNode << "\n" << endl;
                 break;
         }
     }
