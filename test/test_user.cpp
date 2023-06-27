@@ -85,10 +85,10 @@ int main()
             case 5:
                 ptrTree = userReadFile();
     
-                if (ptrTree == nullptr) cout << "Árvore vazia :(" << endl;
+                if (ptrTree == nullptr) cout << "Árvore vazia :(\n" << endl;
                 else
                 {
-                    cout << "Travessia Em Ordem da árvore:" << endl;
+                    cout << "Travessia Em Ordem da árvore criada:" << endl;
                     traverseInOrder(ptrTree);
                     cout << "\n" << endl;
                 }

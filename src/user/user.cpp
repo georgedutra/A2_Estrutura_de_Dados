@@ -7,6 +7,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <filesystem>
 #include "..\tree\tree.h"
 #include "user.h"
 
@@ -101,14 +102,18 @@ struct TreeNode* userSearchNode(struct TreeNode* ptrTree)
 
 struct TreeNode* userReadFile()
 {
+    cout << "Arquivos identificados na pasta \\data:" << endl;
+    for (const auto &entry : filesystem::directory_iterator("..\\data")) cout << entry.path() << endl;
+    // Itera sobre os nomes encontrados na pasta \data
+
     string strFileName;
-    cout << "Digite o nome do arquivo inserido na pasta \\data, com a extensão: \n> ";
+    cout << "\nDigite o nome do arquivo desejado para criar a árvore, incluindo a extensão: \n> ";
     cin >> strFileName;
     cout << endl;
 
     ifstream inData;
     inData.open("..\\data\\" + strFileName);
-    if (!inData)
+    if (!inData) // Se o arquivo não for aberto corretamente
     {
         cout << "Arquivo não encontrado. Abortando operação." << endl;
         return nullptr;
@@ -121,6 +126,7 @@ struct TreeNode* userReadFile()
     {
         ptrNewTree = insertTreeNode(ptrNewTree, iNum);
     }
-
+    
+    inData.close(); // Fecha a input stream para evitar leaking
     return ptrNewTree;
 }
