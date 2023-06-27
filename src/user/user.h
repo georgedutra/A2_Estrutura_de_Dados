@@ -43,4 +43,11 @@ struct TreeNode* userDeleteNode(struct TreeNode* ptrTree);
 */
 struct TreeNode* userSearchNode(struct TreeNode* ptrTree);
 
+/** 
+ * Função de interface que busca arquivos na pasta \data para construir uma árvore binária de busca.
+ * 
+ * Caso o arquivo não seja encontrado, retorna um nullptr.
+ * 
+ * @return Ponteiro para o nó raiz da árvore criada.
+*/
 struct TreeNode* userReadFile();
