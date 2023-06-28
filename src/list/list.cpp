@@ -1,4 +1,5 @@
 #include <iostream>
+#include <math.h>
 #include "list.h"
 
 using namespace std;
@@ -222,4 +223,121 @@ void swapNodes(struct DoublyList* ptrList, struct ListNode* ptrNode1, struct Lis
     ptrNode2->ptrPrev = ptrTemp;
 
     return;
+}
+
+// Bubble Sort para listas duplamente encadeadas:
+void bubbleSort(struct DoublyList* ptrList)
+{
+    int iLenght = getLenght(ptrList);
+    bool bUnordered;
+
+    struct ListNode* ptrStart = ptrList->ptrHead;
+    struct ListNode* ptrEnd = ptrList->ptrTail;
+
+    for (int iOuterLoop = 0; iOuterLoop < iLenght-1; iOuterLoop++) 
+    {
+        // Em cada loop externo, partimos do pressuposto de que a lista estará organizada
+        bUnordered = false;
+
+        while (ptrStart != ptrEnd && ptrStart->ptrPrev != ptrEnd)
+        {
+            if(ptrStart->iData > ptrStart->ptrNext->iData) 
+            {
+                swapNodes(ptrList, ptrStart, ptrStart->ptrNext);
+                bUnordered = true;
+            }
+            else ptrStart = ptrStart->ptrNext;
+        }
+
+        // Ao fim de um loop externo, se a lista não tinha nada fora de ordem, encerra o sort
+        if (bUnordered == false) return;
+
+        // Se não quebramos o loop, otimizamos o algoritmo reduzindo o fim do loop interno, e preparamos o próximo
+        if (ptrStart != ptrList->ptrTail) ptrEnd = ptrStart;
+        ptrStart = ptrList->ptrHead;
+    }
+}
+
+// Selection Sort recursivo para listas duplamente encadeadas
+void selectionSort(struct DoublyList* ptrList, struct ListNode* ptrHead)
+{
+    if (ptrHead->ptrNext == nullptr) return; // Caso Base
+    
+    struct ListNode* ptrInner;
+    struct ListNode* ptrTemp;
+
+    for (ptrInner = ptrHead->ptrNext; ptrInner != nullptr; ptrInner = ptrInner->ptrNext)
+    {
+        if (ptrHead->iData > ptrInner->iData) // Se algum nó no meio é menor que a head, trocamos os dois
+        {
+            swapNodes(ptrList, ptrHead, ptrInner);
+
+            // Após a troca, é necessário rearranjar os ponteiros
+            ptrTemp = ptrInner;
+            ptrInner = ptrHead;
+            ptrHead = ptrTemp;
+        }
+    }
+    // Chama o sort para a próxima sub-lista
+    selectionSort(ptrList, ptrHead->ptrNext); 
+}
+
+// Insertion Sort para listas duplamente encadeadas
+void insertionSort(struct DoublyList* ptrList)
+{
+    struct ListNode* ptrOuter = ptrList->ptrHead->ptrNext; // Ponteiro do nó que será removido em cada iteração
+    struct ListNode* ptrInner; // Ponteiro que procura onde inserir o nó
+    struct ListNode* ptrTemp; // Ponteiro que guarda o nó removido
+
+    while (ptrOuter != nullptr)
+    {
+        ptrInner = ptrOuter;
+        ptrOuter = ptrOuter->ptrNext;
+        ptrTemp = popNode(ptrList, ptrInner);
+
+        while (ptrInner->ptrPrev != nullptr) // Procura onde inserir o temp
+        {
+            if (ptrInner->ptrPrev->iData <= ptrTemp->iData) break;
+            ptrInner = ptrInner->ptrPrev;
+        }
+        if (ptrInner == ptrList->ptrHead) insertFront(ptrList, ptrTemp);
+        else insertAfter(ptrInner->ptrPrev, ptrTemp);
+    }
+}
+
+// ShellSort com o incremento de Shell (Atenção: o ShellSort NÃO é otimizado para estruturas sem indexação)
+void shellSort(DoublyList* ptrList, int iLenght)
+{
+    struct ListNode* ptrOuter; 
+    struct ListNode* ptrInner; 
+    struct ListNode* ptrTemp;
+
+    for (int iCount = 2; trunc(iLenght/iCount) >= 1; iCount = iCount*2) // Para cada incremento, começando do maior, indo até 1
+    {
+        int iInc = trunc(iLenght/iCount); // Calcula o incremento
+
+        for (int iSubList = 0; iSubList < iInc; iSubList++) // Para cada "sublista" dentro da lista original 
+        {
+            ptrOuter = ptrList->ptrHead; // Reseta o ptrOuter
+            for (int iWalk = 0; iWalk < iSubList + iInc; iWalk++) ptrOuter = ptrOuter->ptrNext; // Caminha para o segundo elemento da sublista
+            
+            // Imagine que estamos fazendo um insertion sort, mas cada nó não olha para o anterior, e sim para o nó que está 'iInc' passos atrás
+            for (int iOuterLoop = iSubList + iInc; iOuterLoop < iLenght; iOuterLoop += iInc) // Loop externo
+            {
+                ptrInner = ptrOuter; // Reseta o ptrInner
+                for (int iWalk = 0; iWalk < iInc && ptrOuter != nullptr; iWalk++) ptrOuter = ptrOuter->ptrNext; // Outer caminha 'iInc' nós para frente
+
+                ptrTemp = ptrInner; // Esse é o nó que "sai" da parte desordenada, e quer entrar na parte ordenada 
+
+                for (int iInnerLoop = iOuterLoop; iInnerLoop > iSubList; iInnerLoop -= iInc) // Loop Interno
+                {
+                    for (int iWalk = 0; iWalk < iInc; iWalk++) ptrInner = ptrInner->ptrPrev; // Inner caminha 'iInc' passos para trás
+                    if (ptrInner->iData <= ptrTemp->iData) break; // Se essa sublista está ordenada, quebra o loop interno
+
+                    swapNodes(ptrList, ptrInner, ptrTemp); // Caso contrário, trocamos o temp com o nó que está 'iInc' passos atrás dele 
+                    ptrInner = ptrTemp; // E resetamos Inner para o próximo passo
+                }
+            }
+        }
+    }
 }
