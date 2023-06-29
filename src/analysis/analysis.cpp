@@ -23,5 +23,16 @@ bool isComplete(struct TreeNode* ptrTree)
 
 bool isPerfect(struct TreeNode* ptrTree, int iHeight, int iActualLevel)
 {
+    if (ptrTree == nullptr) return true;
+    if (ptrTree -> ptrLeft == nullptr && ptrTree -> ptrRight == nullptr)
+    {
+        if (iHeight == iActualLevel) return true;
+        return false;
+    }
+    if (ptrTree -> ptrLeft != nullptr && ptrTree -> ptrRight != nullptr)
+    {
+        return isPerfect(ptrTree -> ptrLeft, iHeight, iActualLevel + 1) &&
+               isPerfect(ptrTree -> ptrRight, iHeight, iActualLevel + 1);
+    }
     return false;
 }
