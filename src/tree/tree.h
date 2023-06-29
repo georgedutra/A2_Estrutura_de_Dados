@@ -90,3 +90,11 @@ struct TreeNode* bestSubstitute(struct TreeNode* ptrNode);
  * @return Ponteiro para a raiz da árvore modificada.  
 */
 struct TreeNode* deleteTreeNode(struct TreeNode* ptrCurrentNode, int iData);
+
+/**
+ * Função que converte uma árvore binária de busca em uma lista duplamente encadeada.
+ * 
+ * @param ptrRoot Ponteiro para o nó raiz da árvore a ser convertida.
+ * @return Ponteiro para a lista duplamente encadeada resultante da conversão.
+*/
+struct DoublyList* treeToDoublyList(struct TreeNode* ptrRoot);
