@@ -184,4 +184,73 @@ int main()
      cout << "Altura calculada da árvore: " << getHeight(testRoot8) << endl;
 
      cout << "\n" << endl;
+
+     cout << "\n===================================================\n"<< endl;
+
+     cout << "Teste da função getSize:\n" << endl;
+     cout << "Criando árvores e verificando seus tamanhos: \n" << endl;
+
+     TreeNode *testRoot9 = newTreeNode(10);
+     testRoot9 = insertTreeNode(testRoot9, 7);
+     testRoot9 = insertTreeNode(testRoot9, 15);
+     testRoot9 = insertTreeNode(testRoot9, 2);
+
+     cout << "Árvore: ";
+     traverseInOrder(testRoot9);
+     cout << endl;
+
+     cout << "Tamanho real da árvore: 4" << endl;
+     cout << "Tamanho calculado da árvore: " << getSize(testRoot9) << endl;
+
+     cout << "\n" << endl;
+
+     TreeNode *testRoot10 = newTreeNode(10);
+
+     cout << "Árvore: ";
+     traverseInOrder(testRoot10);
+     cout << endl;
+
+     cout << "Tamanho real da árvore: 1" << endl;
+     cout << "Tamanho calculado da árvore: " << getSize(testRoot10) << endl;
+
+     cout << "\n" << endl;
+
+     TreeNode *testRoot11 = newTreeNode(10);
+     testRoot11 = insertTreeNode(testRoot11, 7);
+     testRoot11 = insertTreeNode(testRoot11, 15);
+     testRoot11 = insertTreeNode(testRoot11, 2);
+     testRoot11 = insertTreeNode(testRoot11, 8);
+     testRoot11 = insertTreeNode(testRoot11, 12);
+     testRoot11 = insertTreeNode(testRoot11, 20);
+     testRoot11 = insertTreeNode(testRoot11, 1);
+
+     cout << "Árvore: ";
+     traverseInOrder(testRoot11);
+     cout << endl;
+
+     cout << "Tamanho real da árvore: 8" << endl;
+     cout << "Tamanho calculado da árvore: " << getSize(testRoot11) << endl;
+
+     cout << "\n" << endl;
+
+     TreeNode *testRoot12 = newTreeNode(10);
+     testRoot12 = insertTreeNode(testRoot12, 7);
+     testRoot12 = insertTreeNode(testRoot12, 15);
+     testRoot12 = insertTreeNode(testRoot12, 2);
+     testRoot12 = insertTreeNode(testRoot12, 8);
+     testRoot12 = insertTreeNode(testRoot12, 12);
+     testRoot12 = insertTreeNode(testRoot12, 20);
+     testRoot12 = insertTreeNode(testRoot12, 1);
+     testRoot12 = insertTreeNode(testRoot12, 22);
+     testRoot12 = insertTreeNode(testRoot12, 25);
+
+     cout << "Árvore: ";
+     traverseInOrder(testRoot12);
+     cout << endl;
+
+     cout << "Tamanho real da árvore: 10" << endl;
+     cout << "Tamanho calculado da árvore: " << getSize(testRoot12) << endl;
+
+     cout << "\n===================================================\n"<< endl;
+
 }
