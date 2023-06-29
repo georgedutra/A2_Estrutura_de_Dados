@@ -12,6 +12,12 @@ using namespace std;
 
 bool isComplete(struct TreeNode* ptrTree)
 {
+    if (ptrTree == nullptr) return true;
+    if (ptrTree -> ptrLeft == nullptr && ptrTree -> ptrRight == nullptr) return true;
+    if (ptrTree -> ptrLeft != nullptr && ptrTree -> ptrRight != nullptr)
+    {
+        return isComplete(ptrTree -> ptrLeft) && isComplete(ptrTree -> ptrRight);
+    }
     return false;
 }
 

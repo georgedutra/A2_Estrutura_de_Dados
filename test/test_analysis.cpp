@@ -45,7 +45,7 @@ int main()
     cout << endl;
 
     if (isComplete(testRoot)) cout << "A árvore é completa." << endl;
-    else cout << "A árvore não é completa." << endl;
+    else cout << "A árvore é incompleta." << endl;
 
     TreeNode* testRoot2 = newTreeNode(10);
     testRoot2 = insertTreeNode(testRoot2, 7);
@@ -61,7 +61,7 @@ int main()
     cout << endl;
 
     if (isComplete(testRoot2)) cout << "A árvore é completa." << endl;
-    else cout << "A árvore não é completa." << endl;
+    else cout << "A árvore é incompleta." << endl;
 
     cout << "\n===================================================\n" << endl;
     cout << "Teste da função isPerfect:\n" << endl;
