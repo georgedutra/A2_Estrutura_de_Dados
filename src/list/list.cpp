@@ -14,6 +14,15 @@ struct ListNode* createListNode(int iVal)
     return ptrNewNode;
 }
 
+struct DoublyList* createList()
+{
+    struct DoublyList* newList = new(DoublyList); 
+    newList->ptrHead = nullptr;
+    newList->ptrTail = nullptr;
+
+    return newList;
+}
+
 void insertFront(struct DoublyList* ptrList, struct ListNode* ptrNewNode)
 {
     ptrNewNode->ptrPrev = nullptr;

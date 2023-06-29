@@ -11,3 +11,9 @@ Para testar as funções de interação do usuário:
     g++ -o test_user.exe .\test_user.cpp ..\src\tree\tree.cpp ..\src\user\user.cpp
 
 Arquivo gerado: `test_user.exe`
+
+Para testar as funções de listas:
+
+    g++ -o test_list.exe .\test_list.cpp ..\src\list\list.cpp 
+
+Arquivo gerado: `test_list.exe`

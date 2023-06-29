@@ -1,4 +1,13 @@
-// Definição de nó
+/**
+ * Este arquivo 'header' é parte do projeto {{ A2_Estrutura_de_Dados }}.
+ * 
+ * Tem como objetivo guardar as declarações de funções e estruturas necessárias para construção e manipulação de listas duplamente encadeadas.
+*/
+#pragma once
+
+/**
+ * Estrutura de nó que compõe uma lista duplamente encadeada.
+*/
 struct ListNode
 {
     int iData;
@@ -6,7 +15,9 @@ struct ListNode
     struct ListNode* ptrPrev;
 };
 
-//Definição de lista
+/**
+ * Estrutura de Lista Duplamente Encadeada
+*/
 struct DoublyList
 {
     struct ListNode* ptrHead;
@@ -22,6 +33,13 @@ struct DoublyList
  * @return Ponteiro para o nó criado.
 */
 struct ListNode* createListNode(int iVal);
+
+/**
+ * Função que cria uma lista vazia.
+ * 
+ * @return Ponteiro para a lista vazia criada.
+*/
+struct DoublyList* createList();
 
 /**
  *  Função que insere um nó no início de uma lista duplamente encadeada.
@@ -120,9 +138,10 @@ void swapNodes(struct DoublyList* ptrList, struct ListNode* ptrNode1, struct Lis
 void bubbleSort(struct DoublyList* ptrList);
 
 /**
- * Função que implementa o algoritmo de Selection Sorting para listas duplamente encadeadas.
+ * Função que implementa o algoritmo recursivo de Selection Sorting para listas duplamente encadeadas.
  * 
  * @param ptrList Lista que será ordenada.
+ * @param ptrHead Ponteiro para o nó Head da lista.
 */
 void selectionSort(struct DoublyList* ptrList, struct ListNode* ptrHead);
 
