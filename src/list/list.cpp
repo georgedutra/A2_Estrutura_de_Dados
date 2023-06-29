@@ -215,7 +215,6 @@ void swapNodes(struct DoublyList* ptrList, struct ListNode* ptrNode1, struct Lis
     return;
 }
 
-// Bubble Sort para listas duplamente encadeadas:
 void bubbleSort(struct DoublyList* ptrList)
 {
     int iLenght = getLenght(ptrList);
@@ -248,7 +247,6 @@ void bubbleSort(struct DoublyList* ptrList)
     }
 }
 
-// Selection Sort recursivo para listas duplamente encadeadas
 void selectionSort(struct DoublyList* ptrList, struct ListNode* ptrHead)
 {
     if (ptrHead->ptrNext == nullptr) return; // Caso Base
@@ -272,7 +270,6 @@ void selectionSort(struct DoublyList* ptrList, struct ListNode* ptrHead)
     selectionSort(ptrList, ptrHead->ptrNext); 
 }
 
-// Insertion Sort para listas duplamente encadeadas
 void insertionSort(struct DoublyList* ptrList)
 {
     struct ListNode* ptrOuter = ptrList->ptrHead->ptrNext; // Ponteiro do nó que será removido em cada iteração
@@ -295,7 +292,6 @@ void insertionSort(struct DoublyList* ptrList)
     }
 }
 
-// ShellSort com o incremento de Shell (Atenção: o ShellSort NÃO é otimizado para estruturas sem indexação)
 void shellSort(DoublyList* ptrList, int iLenght)
 {
     struct ListNode* ptrOuter; 
