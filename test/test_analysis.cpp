@@ -117,7 +117,7 @@ int main()
      cout << "\n===================================================\n"<< endl;
 
      cout << "Teste da função getHeight:\n" << endl;
-     cout << "Criando uma árvore e verificando sua altura.\n" << endl;
+     cout << "Criando árvores e verificando suas alturas: \n" << endl;
 
      TreeNode *testRoot5 = newTreeNode(10);
      testRoot5 = insertTreeNode(testRoot5, 7);
@@ -127,24 +127,22 @@ int main()
      testRoot5 = insertTreeNode(testRoot5, 12);
      testRoot5 = insertTreeNode(testRoot5, 20);
 
-     cout << "\n" << endl;
-
-     cout << "Árvore de 3 níveis perfeita: ";
+     cout << "Árvore de 2 níveis perfeita: ";
      traverseInOrder(testRoot5);
      cout << endl;
 
-     cout << "Altura real da árvore: 3" << endl;
+     cout << "Altura real da árvore: 2" << endl;
      cout << "Altura calculada da árvore: " << getHeight(testRoot5) << endl;
 
      cout << "\n" << endl;
 
      TreeNode *testRoot6 = newTreeNode(10);
-     
+
      cout << "Árvore com apenas a raiz: ";
      traverseInOrder(testRoot6);
      cout << endl;
 
-     cout << "Altura real da árvore: 1" << endl;
+     cout << "Altura real da árvore: 0" << endl;
      cout << "Altura calculada da árvore: " << getHeight(testRoot6) << endl;
 
      cout << "\n" << endl;
@@ -158,11 +156,11 @@ int main()
      testRoot7 = insertTreeNode(testRoot7, 20);
      testRoot7 = insertTreeNode(testRoot7, 1);
 
-     cout << "Árvore de 4 níveis - testando o lado esquerdo: ";
+     cout << "Árvore de 3 níveis - testando o lado esquerdo: ";
      traverseInOrder(testRoot7);
      cout << endl;
 
-     cout << "Altura real da árvore: 4" << endl;
+     cout << "Altura real da árvore: 3" << endl;
      cout << "Altura calculada da árvore: " << getHeight(testRoot7) << endl;
 
      cout << "\n" << endl;
@@ -178,11 +176,11 @@ int main()
      testRoot8 = insertTreeNode(testRoot8, 22);
      testRoot8 = insertTreeNode(testRoot8, 25);
 
-     cout << "Árvore de 5 níveis - testando o lado direito: ";
+     cout << "Árvore de 4 níveis - testando o lado direito: ";
      traverseInOrder(testRoot8);
      cout << endl;
 
-     cout << "Altura real da árvore: 5" << endl;
+     cout << "Altura real da árvore: 4" << endl;
      cout << "Altura calculada da árvore: " << getHeight(testRoot8) << endl;
 
      cout << "\n" << endl;
