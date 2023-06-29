@@ -126,7 +126,12 @@ struct TreeNode* deleteTreeNode(struct TreeNode* ptrCurrentNode, int iData)
     return ptrCurrentNode; // Retorna a árvore modificada
 }   
 
-void treeToDoublyList(struct DoublyList* ptrList, struct TreeNode* ptrRoot)
+void treeToDoublyList(struct DoublyList* ptrList, struct TreeNode* ptrNode)
 {
-    
+    if (ptrNode == nullptr) return;
+
+    struct ListNode* ptrListNode = createListNode(ptrNode -> iPayload);
+    insertEnd(ptrList, ptrListNode);
+    treeToDoublyList(ptrList, ptrNode->ptrLeft);
+    treeToDoublyList(ptrList, ptrNode->ptrRight);
 }
