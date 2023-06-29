@@ -44,10 +44,11 @@ bool isPerfect(struct TreeNode *ptrTree, int iHeight, int iActualLevel)
 int getHeight(struct TreeNode *ptrTree)
 {
     if (ptrTree == nullptr)
-        {return 0;}
+        {return -1;}
     int iLeftHeight = getHeight(ptrTree->ptrLeft);
     int iRightHeight = getHeight(ptrTree->ptrRight);
     if (iLeftHeight > iRightHeight)
         {return iLeftHeight + 1;}
     return iRightHeight + 1;
 }
+
