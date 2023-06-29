@@ -100,6 +100,7 @@ int main()
     << "Fim dos Testes\n"
     <<"===================================================" 
     << endl;
+    system("pause");
 
     return 0;
 }
