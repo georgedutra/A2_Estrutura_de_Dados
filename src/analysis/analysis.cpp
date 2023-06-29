@@ -52,3 +52,10 @@ int getHeight(struct TreeNode *ptrTree)
     return iRightHeight + 1;
 }
 
+
+int getSize(struct TreeNode *ptrTree)
+{
+    if (ptrTree == nullptr)
+        {return 0;}
+    return getSize(ptrTree->ptrLeft) + getSize(ptrTree->ptrRight) + 1;
+}
