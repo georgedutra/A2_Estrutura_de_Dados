@@ -23,3 +23,11 @@ bool isComplete(struct TreeNode *ptrTree);
  * @return true se a árvore for perfeita, false caso contrário
  */
 bool isPerfect(struct TreeNode *ptrTree, int iHeight, int iActualLevel);
+
+/**
+ * Funçao recursiva que retorna a altura de uma árvore binária de busca.
+ *
+ * @param ptrTree Ponteiro para um nó da árvore a ser verificada
+ * @return Altura da árvore
+ */
+int getHeight(struct TreeNode *ptrTree);
