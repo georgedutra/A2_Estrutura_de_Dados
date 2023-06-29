@@ -20,6 +20,92 @@ using namespace std;
 int main()
 {
 
-    
+    SetConsoleOutputCP( 65001 ); // Definindo console output como UTF-8
+
+    cout << "===================================================\n"
+    << "Início dos Testes\n" 
+    <<"===================================================" << endl;
+
+    cout << "Teste da função isComplete:\n"
+    <<"Criando uma árvore completa e uma incompleta e verificando se são completas.\n"
+    << endl;
+
+    TreeNode* testRoot = newTreeNode(10);
+    testRoot = insertTreeNode(testRoot, 7);
+    testRoot = insertTreeNode(testRoot, 15);
+    testRoot = insertTreeNode(testRoot, 2);
+    testRoot = insertTreeNode(testRoot, 8);
+    testRoot = insertTreeNode(testRoot, 12);
+    testRoot = insertTreeNode(testRoot, 20);
+    testRoot = insertTreeNode(testRoot, 1);
+    testRoot = insertTreeNode(testRoot, 3);
+
+    cout << "Árvore completa: ";
+    traverseInOrder(testRoot);
+    cout << endl;
+
+    if (isComplete(testRoot)) cout << "A árvore é completa." << endl;
+    else cout << "A árvore não é completa." << endl;
+
+    TreeNode* testRoot2 = newTreeNode(10);
+    testRoot = insertTreeNode(testRoot, 7);
+    testRoot = insertTreeNode(testRoot, 15);
+    testRoot = insertTreeNode(testRoot, 2);
+    testRoot = insertTreeNode(testRoot, 8);
+    testRoot = insertTreeNode(testRoot, 12);
+    testRoot = insertTreeNode(testRoot, 20);
+    testRoot = insertTreeNode(testRoot, 1);
+
+    cout << "\nÁrvore incompleta: ";
+    traverseInOrder(testRoot2);
+    cout << endl;
+
+    if (isComplete(testRoot2)) cout << "A árvore é completa." << endl;
+    else cout << "A árvore não é completa." << endl;
+
+    cout << "\n===================================================\n" << endl;
+    cout << "Teste da função isPerfect:\n" << endl;
+    cout << "Criando uma árvore perfeita e uma imperfeita e verificando se são perfeitas.\n"
+    << endl;
+
+    TreeNode* testRoot3 = newTreeNode(10);
+    testRoot = insertTreeNode(testRoot, 7);
+    testRoot = insertTreeNode(testRoot, 15);
+    testRoot = insertTreeNode(testRoot, 2);
+    testRoot = insertTreeNode(testRoot, 8);
+    testRoot = insertTreeNode(testRoot, 12);
+    testRoot = insertTreeNode(testRoot, 20);
+
+    cout << "Árvore perfeita: ";
+    traverseInOrder(testRoot3);
+    cout << endl;
+
+    if (isPerfect(testRoot3, 3, 1)) cout << "A árvore é perfeita." << endl;
+    else cout << "A árvore não é perfeita." << endl;
+
+    TreeNode* testRoot4 = newTreeNode(10);
+    testRoot = insertTreeNode(testRoot, 7);
+    testRoot = insertTreeNode(testRoot, 15);
+    testRoot = insertTreeNode(testRoot, 2);
+    testRoot = insertTreeNode(testRoot, 8);
+    testRoot = insertTreeNode(testRoot, 12);
+
+    cout << "\nÁrvore imperfeita: ";
+    traverseInOrder(testRoot4);
+    cout << endl;
+
+    if (isPerfect(testRoot4, 3, 1)) cout << "A árvore é perfeita." << endl;
+    else cout << "A árvore não é perfeita." << endl;
+
+    cout << "Teste da função isPerfect:\n" << endl;
+    cout << "Criando uma árvore completa e imperfeita e verificando se existe erro.\n"
+    << endl;
+
+    cout << "\nÁrvore completa e imperfeita: ";
+    traverseInOrder(testRoot);
+    cout << endl;
+
+    if (isPerfect(testRoot, 3, 1)) cout << "A árvore é completa e perfeita." << endl;
+    else cout << "A árvore é completa e não é perfeita." << endl;
 
 }
