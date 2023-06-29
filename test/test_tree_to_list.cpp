@@ -50,4 +50,26 @@ int main()
     printList(testList);
     cout << endl;
 
+    cout << "Teste das funções de ordenar árvore em lista:\n" << endl;
+
+    cout << "Árvore binária: ";
+    traversePreOrder(testRoot);
+    cout << "\n"<<  endl;
+
+    cout << "Bubble Sort: ";
+    bubbleSortTree(testRoot);
+    cout << endl;
+
+    cout << "Insertion Sort: ";
+    insertionSortTree(testRoot);
+    cout << endl;
+
+    cout << "Selection Sort: ";
+    selectionSortTree(testRoot);
+    cout << endl;
+
+    cout << "Shell Sort: ";
+    shellSortTree(testRoot);
+    cout << endl;
+
 }

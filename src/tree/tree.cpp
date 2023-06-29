@@ -135,3 +135,37 @@ void treeToDoublyList(struct DoublyList* ptrList, struct TreeNode* ptrNode)
     treeToDoublyList(ptrList, ptrNode->ptrLeft);
     treeToDoublyList(ptrList, ptrNode->ptrRight);
 }
+
+void bubbleSortTree(struct TreeNode* ptrRoot)
+{
+    struct DoublyList* ptrList = createList();
+    treeToDoublyList(ptrList, ptrRoot);
+    bubbleSort(ptrList);
+    printList(ptrList);
+}
+
+void selectionSortTree(struct TreeNode* ptrRoot)
+{
+    struct DoublyList* ptrList = createList();
+    treeToDoublyList(ptrList, ptrRoot);
+    selectionSort(ptrList, ptrList -> ptrHead);
+    printList(ptrList);
+}
+
+
+void insertionSortTree(struct TreeNode* ptrRoot)
+{
+    struct DoublyList* ptrList = createList();
+    treeToDoublyList(ptrList, ptrRoot);
+    insertionSort(ptrList);
+    printList(ptrList);
+}
+
+
+void shellSortTree(struct TreeNode* ptrRoot)
+{
+    struct DoublyList* ptrList = createList();
+    treeToDoublyList(ptrList, ptrRoot);
+    shellSort(ptrList, getLenght(ptrList));
+    printList(ptrList);
+}
