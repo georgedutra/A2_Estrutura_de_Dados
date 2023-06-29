@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include "tree.h"
+#include "../list/list.h"
 
 using namespace std;
 
@@ -124,3 +125,47 @@ struct TreeNode* deleteTreeNode(struct TreeNode* ptrCurrentNode, int iData)
 
     return ptrCurrentNode; // Retorna a árvore modificada
 }   
+
+void treeToDoublyList(struct DoublyList* ptrList, struct TreeNode* ptrNode)
+{
+    if (ptrNode == nullptr) return;
+
+    struct ListNode* ptrListNode = createListNode(ptrNode -> iPayload);
+    insertEnd(ptrList, ptrListNode);
+    treeToDoublyList(ptrList, ptrNode->ptrLeft);
+    treeToDoublyList(ptrList, ptrNode->ptrRight);
+}
+
+void bubbleSortTree(struct TreeNode* ptrRoot)
+{
+    struct DoublyList* ptrList = createList();
+    treeToDoublyList(ptrList, ptrRoot);
+    bubbleSort(ptrList);
+    printList(ptrList);
+}
+
+void selectionSortTree(struct TreeNode* ptrRoot)
+{
+    struct DoublyList* ptrList = createList();
+    treeToDoublyList(ptrList, ptrRoot);
+    selectionSort(ptrList, ptrList -> ptrHead);
+    printList(ptrList);
+}
+
+
+void insertionSortTree(struct TreeNode* ptrRoot)
+{
+    struct DoublyList* ptrList = createList();
+    treeToDoublyList(ptrList, ptrRoot);
+    insertionSort(ptrList);
+    printList(ptrList);
+}
+
+
+void shellSortTree(struct TreeNode* ptrRoot)
+{
+    struct DoublyList* ptrList = createList();
+    treeToDoublyList(ptrList, ptrRoot);
+    shellSort(ptrList, getLenght(ptrList));
+    printList(ptrList);
+}

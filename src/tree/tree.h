@@ -90,3 +90,43 @@ struct TreeNode* bestSubstitute(struct TreeNode* ptrNode);
  * @return Ponteiro para a raiz da árvore modificada.  
 */
 struct TreeNode* deleteTreeNode(struct TreeNode* ptrCurrentNode, int iData);
+
+/**
+ * Função que converte uma árvore binária de busca em uma lista duplamente encadeada, ordenada em preOrder
+ * 
+ * @param ptrList Ponteiro para a lista duplamente encadeada que receberá os valores da árvore.
+ * @param ptrNode Ponteiro para um nó da árvore a ser convertida.
+*/
+void treeToDoublyList(struct DoublyList* ptrList, struct TreeNode* ptrNode);
+
+/**
+ * Função que converte uma árvore binária de busca em uma lista duplamente encadeada,
+ * ordena com bubble sort e printa o resultado na tela
+ * 
+ * @param ptrNode Ponteiro para a raíz da árvore a ser convertida.
+*/
+void bubbleSortTree(struct TreeNode* ptrRoot);
+
+/**
+ * Função que converte uma árvore binária de busca em uma lista duplamente encadeada,
+ * ordena com selection sort e printa o resultado na tela
+ * 
+ * @param ptrNode Ponteiro para a raíz da árvore a ser convertida.
+*/
+void selectionSortTree(struct TreeNode* ptrRoot);
+
+/**
+ * Função que converte uma árvore binária de busca em uma lista duplamente encadeada,
+ * ordena com insertion sort e printa o resultado na tela
+ * 
+ * @param ptrNode Ponteiro para a raíz da árvore a ser convertida.
+*/
+void insertionSortTree(struct TreeNode* ptrRoot);
+
+/**
+ * Função que converte uma árvore binária de busca em uma lista duplamente encadeada,
+ * ordena com shell sort e printa o resultado na tela
+ * 
+ * @param ptrNode Ponteiro para a raíz da árvore a ser convertida.
+*/
+void shellSortTree(struct TreeNode* ptrRoot);
