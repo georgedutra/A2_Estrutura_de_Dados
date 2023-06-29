@@ -40,7 +40,8 @@ int main()
     traverseInOrder(testRoot);
     cout << endl;
 
-    DoublyList* testList = treeToDoublyList(testRoot);
+    DoublyList* testList = createList();
+    treeToDoublyList(testList, testRoot);
 
     cout << "\nLista duplamente encadeada: ";
     printList(testList);
