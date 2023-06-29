@@ -4,7 +4,6 @@
 
 using namespace std;
 
-// Função que cria um nó
 struct ListNode* createListNode(int iVal)
 {
     struct ListNode* ptrNewNode = new(ListNode);
@@ -15,7 +14,6 @@ struct ListNode* createListNode(int iVal)
     return ptrNewNode;
 }
 
-// Função que insere um nó no início da estrutura lista
 void insertFront(struct DoublyList* ptrList, struct ListNode* ptrNewNode)
 {
     ptrNewNode->ptrPrev = nullptr;
@@ -27,7 +25,6 @@ void insertFront(struct DoublyList* ptrList, struct ListNode* ptrNewNode)
     ptrList->ptrHead = ptrNewNode;
 }
 
-// Função que insere um nó no final da estrutura lista
 void insertEnd(struct DoublyList* ptrList, struct ListNode* ptrNewNode)
 {
     ptrNewNode->ptrNext = nullptr;
@@ -39,8 +36,7 @@ void insertEnd(struct DoublyList* ptrList, struct ListNode* ptrNewNode)
     ptrList->ptrTail = ptrNewNode;
 }
 
-// Função que imprime a estrutura lista
-void displayList(struct DoublyList* ptrList)
+void printList(struct DoublyList* ptrList)
 {
     if (ptrList->ptrHead == nullptr) return;
     if (ptrList->ptrHead->ptrPrev != nullptr) return;
@@ -57,7 +53,6 @@ void displayList(struct DoublyList* ptrList)
     cout << endl;
 }
 
-// Função que apaga o primeiro elemento da estrutura lista
 void deleteFirst(struct DoublyList* ptrList)
 {
     if (ptrList->ptrHead == nullptr) return;
@@ -71,7 +66,6 @@ void deleteFirst(struct DoublyList* ptrList)
     delete(ptrTemp);
 }
 
-// Função que apaga o último elemento da estrutura lista
 void deleteLast(struct DoublyList* ptrList)
 {
     if (ptrList->ptrHead == nullptr) return;
@@ -85,8 +79,7 @@ void deleteLast(struct DoublyList* ptrList)
     delete(ptrTemp);
 }
 
-// Função que recebe um nó de uma lista, e insere um novo logo após o Loc na estrutura
-void insertAfter(struct ListNode* ptrLoc, struct ListNode* ptrNewNode)
+void insertAfter(struct DoublyList* ptrList, struct ListNode* ptrLoc, struct ListNode* ptrNewNode)
 {
     if (ptrLoc == nullptr) return;
 
@@ -97,9 +90,9 @@ void insertAfter(struct ListNode* ptrLoc, struct ListNode* ptrNewNode)
 
     // Se havia alguém na frente do ptrLoc, corrige o previous dele
     if (ptrNewNode->ptrNext != nullptr) ptrNewNode->ptrNext->ptrPrev = ptrNewNode;
+    else ptrList->ptrTail = ptrNewNode;
 }
 
-// Função que deleta um nó específico da lista
 void deleteNode(struct DoublyList* ptrList, struct ListNode* ptrDelete)
 {   
     if (ptrList->ptrHead == nullptr || ptrDelete == nullptr) return;
@@ -122,7 +115,6 @@ void deleteNode(struct DoublyList* ptrList, struct ListNode* ptrDelete)
     delete(ptrDelete);
 }
 
-// Função que remove um nó e o retorna
 struct ListNode* popNode(struct DoublyList* ptrList, struct ListNode* ptrDelete)
 { 
     if (ptrList->ptrHead == nullptr || ptrDelete == nullptr) return nullptr;
@@ -136,7 +128,6 @@ struct ListNode* popNode(struct DoublyList* ptrList, struct ListNode* ptrDelete)
     return ptrDelete;
 }
 
-// Função para saber o tamanho de uma lista duplamente encadeada
 int getLenght(struct DoublyList* ptrList)
 {
     int iCounter = 0;
@@ -149,7 +140,6 @@ int getLenght(struct DoublyList* ptrList)
     return iCounter;
 }
 
-// Função que troca de lugar dois Nodes na estrutura de lista encadeada
 void swapNodes(struct DoublyList* ptrList, struct ListNode* ptrNode1, struct ListNode* ptrNode2)
 {
     struct ListNode* ptrTemp; 
@@ -301,7 +291,7 @@ void insertionSort(struct DoublyList* ptrList)
             ptrInner = ptrInner->ptrPrev;
         }
         if (ptrInner == ptrList->ptrHead) insertFront(ptrList, ptrTemp);
-        else insertAfter(ptrInner->ptrPrev, ptrTemp);
+        else insertAfter(ptrList, ptrInner->ptrPrev, ptrTemp);
     }
 }
 
