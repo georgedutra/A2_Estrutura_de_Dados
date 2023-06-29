@@ -6,6 +6,16 @@
 
 #include <iostream>
 #include "analysis.h"
+#include "..\tree\tree.h"
 
 using namespace std;
 
+bool isComplete(struct TreeNode* ptrTree)
+{
+    return false;
+}
+
+bool isPerfect(struct TreeNode* ptrTree, int iHeight, int iActualLevel)
+{
+    return false;
+}

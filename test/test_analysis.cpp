@@ -48,13 +48,13 @@ int main()
     else cout << "A árvore não é completa." << endl;
 
     TreeNode* testRoot2 = newTreeNode(10);
-    testRoot = insertTreeNode(testRoot, 7);
-    testRoot = insertTreeNode(testRoot, 15);
-    testRoot = insertTreeNode(testRoot, 2);
-    testRoot = insertTreeNode(testRoot, 8);
-    testRoot = insertTreeNode(testRoot, 12);
-    testRoot = insertTreeNode(testRoot, 20);
-    testRoot = insertTreeNode(testRoot, 1);
+    testRoot2 = insertTreeNode(testRoot2, 7);
+    testRoot2 = insertTreeNode(testRoot2, 15);
+    testRoot2 = insertTreeNode(testRoot2, 2);
+    testRoot2 = insertTreeNode(testRoot2, 8);
+    testRoot2 = insertTreeNode(testRoot2, 12);
+    testRoot2 = insertTreeNode(testRoot2, 20);
+    testRoot2 = insertTreeNode(testRoot2, 1);
 
     cout << "\nÁrvore incompleta: ";
     traverseInOrder(testRoot2);
@@ -69,12 +69,12 @@ int main()
     << endl;
 
     TreeNode* testRoot3 = newTreeNode(10);
-    testRoot = insertTreeNode(testRoot, 7);
-    testRoot = insertTreeNode(testRoot, 15);
-    testRoot = insertTreeNode(testRoot, 2);
-    testRoot = insertTreeNode(testRoot, 8);
-    testRoot = insertTreeNode(testRoot, 12);
-    testRoot = insertTreeNode(testRoot, 20);
+    testRoot3 = insertTreeNode(testRoot3, 7);
+    testRoot3 = insertTreeNode(testRoot3, 15);
+    testRoot3 = insertTreeNode(testRoot3, 2);
+    testRoot3 = insertTreeNode(testRoot3, 8);
+    testRoot3 = insertTreeNode(testRoot3, 12);
+    testRoot3 = insertTreeNode(testRoot3, 20);
 
     cout << "Árvore perfeita: ";
     traverseInOrder(testRoot3);
@@ -84,11 +84,11 @@ int main()
     else cout << "A árvore não é perfeita." << endl;
 
     TreeNode* testRoot4 = newTreeNode(10);
-    testRoot = insertTreeNode(testRoot, 7);
-    testRoot = insertTreeNode(testRoot, 15);
-    testRoot = insertTreeNode(testRoot, 2);
-    testRoot = insertTreeNode(testRoot, 8);
-    testRoot = insertTreeNode(testRoot, 12);
+    testRoot4 = insertTreeNode(testRoot4, 7);
+    testRoot4 = insertTreeNode(testRoot4, 15);
+    testRoot4 = insertTreeNode(testRoot4, 2);
+    testRoot4 = insertTreeNode(testRoot4, 8);
+    testRoot4 = insertTreeNode(testRoot4, 12);
 
     cout << "\nÁrvore imperfeita: ";
     traverseInOrder(testRoot4);
@@ -106,6 +106,6 @@ int main()
     cout << endl;
 
     if (isPerfect(testRoot, 3, 1)) cout << "A árvore é completa e perfeita." << endl;
-    else cout << "A árvore é completa e não é perfeita." << endl;
+    else cout << "A árvore é completa e imperfeita." << endl;
 
 }
