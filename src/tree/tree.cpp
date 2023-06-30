@@ -142,6 +142,7 @@ void bubbleSortTree(struct TreeNode* ptrRoot)
     treeToDoublyList(ptrList, ptrRoot);
     bubbleSort(ptrList);
     printList(ptrList);
+    deleteDoublyList(ptrList);
 }
 
 void selectionSortTree(struct TreeNode* ptrRoot)
@@ -150,6 +151,7 @@ void selectionSortTree(struct TreeNode* ptrRoot)
     treeToDoublyList(ptrList, ptrRoot);
     selectionSort(ptrList, ptrList -> ptrHead);
     printList(ptrList);
+    deleteDoublyList(ptrList);
 }
 
 
@@ -159,6 +161,7 @@ void insertionSortTree(struct TreeNode* ptrRoot)
     treeToDoublyList(ptrList, ptrRoot);
     insertionSort(ptrList);
     printList(ptrList);
+    deleteDoublyList(ptrList);
 }
 
 
@@ -168,4 +171,5 @@ void shellSortTree(struct TreeNode* ptrRoot)
     treeToDoublyList(ptrList, ptrRoot);
     shellSort(ptrList, getLenght(ptrList));
     printList(ptrList);
+    deleteDoublyList(ptrList);
 }
