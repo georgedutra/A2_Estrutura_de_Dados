@@ -1,5 +1,6 @@
-/*
- *g++ -o menu.exe .\menu.cpp ..\tree\tree.cpp ..\analysis\analysis.cpp ..\user\user.cpp ..\list\list.cpp 
+/* Este arquivo cria o menu de interação com o usuário. 
+* Ele é responsável por chamar as funções de criação de árvore, leitura de arquivo e análise de árvore. 
+* g++ -o menu.exe .\menu.cpp ..\tree\tree.cpp ..\analysis\analysis.cpp ..\user\user.cpp ..\list\list.cpp 
 */
 
 #include <iostream>
@@ -231,10 +232,4 @@ void menuConstruction()
 
     return;
 
-}
-
-int main()
-{
-    menuConstruction();
-    return 0;
 }
