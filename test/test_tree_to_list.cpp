@@ -3,9 +3,6 @@
  * 
  * Tem como objetivo ser compilado junto aos arquivos tree.cpp e list.cpp, encontrados nas pastas \src\tree e \src\list do projeto,
  * e realiza uma série de testes nas funções que convertem arvore para lista.
- * 
- * Para rodar esse arquivo executar no prompt de comando:
- * g++ -o test_tree_to_list.exe .\test_tree_to_list.cpp ..\src\tree\tree.cpp ..\src\list\list.cpp
 */
 
 #include <iostream>

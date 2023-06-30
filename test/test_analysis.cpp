@@ -3,9 +3,6 @@
  *
  * Tem como objetivo ser compilado junto aos arquivos tree.cpp e user.cpp, encontrados na pasta \src\tree e \src\user do projeto,
  * e realiza uma série de testes nas funções ali designadas.
- *
- * Para rodar esse arquivo executar no prompt de comando:
- * g++ -o test_analysis.exe .\test_analysis.cpp ..\src\tree\tree.cpp ..\src\analysis\analysis.cpp
  */
 
 #include <iostream>
