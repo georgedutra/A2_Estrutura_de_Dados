@@ -124,6 +124,23 @@ void deleteNode(struct DoublyList* ptrList, struct ListNode* ptrDelete)
     delete(ptrDelete);
 }
 
+void deleteDoublyList(struct DoublyList* ptrList)
+{
+    if (ptrList->ptrHead == nullptr) return;
+
+    struct ListNode* ptrTemp = ptrList->ptrHead;
+    struct ListNode* ptrNext;
+
+    while (ptrTemp != nullptr)
+    {
+        ptrNext = ptrTemp->ptrNext;
+        delete(ptrTemp);
+        ptrTemp = ptrNext;
+    }
+    ptrList->ptrHead = nullptr;
+    ptrList->ptrTail = nullptr;
+}
+
 struct ListNode* popNode(struct DoublyList* ptrList, struct ListNode* ptrDelete)
 { 
     if (ptrList->ptrHead == nullptr || ptrDelete == nullptr) return nullptr;

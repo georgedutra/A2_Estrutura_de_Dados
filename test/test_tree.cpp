@@ -126,7 +126,31 @@ int main()
     traverseInOrder(testRoot);
     cout << "\n" << endl;
 
-    cout << "===================================================\n" 
+    cout << "===================================================\n"
+    << "Teste da função deleteTree:\n" << endl;
+
+    cout << "Criando uma árvore\n" << endl;
+    testRoot = insertTreeNode(testRoot, 7);
+    testRoot = insertTreeNode(testRoot, 10);
+    testRoot = insertTreeNode(testRoot, 15);
+    testRoot = insertTreeNode(testRoot, 1);
+    testRoot = insertTreeNode(testRoot, 5);
+    testRoot = insertTreeNode(testRoot, 4);
+    testRoot = insertTreeNode(testRoot, 8);
+    testRoot = insertTreeNode(testRoot, 9);
+    testRoot = insertTreeNode(testRoot, 15);
+    testRoot = insertTreeNode(testRoot, 20);
+
+    cout << "Travessia Em Ordem:\n";
+    traverseInOrder(testRoot);
+
+    cout << "\n\nDeletando a árvore\n" << endl;
+    deleteTree(&testRoot, testRoot);
+
+    cout << "Travessia Em Ordem:\n";
+    traverseInOrder(testRoot);
+
+    cout << "===================================================\n"
     << "Fim dos Testes\n"
     <<"===================================================\n"
     << "Presione enter para sair.";

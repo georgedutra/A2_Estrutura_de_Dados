@@ -100,6 +100,13 @@ void insertAfter(struct DoublyList* ptrList, struct ListNode* ptrLoc, struct Lis
 void deleteNode(struct DoublyList* ptrList, struct ListNode* ptrDelete);
 
 /**
+ * Função que deleta uma lista duplamente encadeada.
+ * 
+ * @param ptrList Ponteiro para a lista que será deletada.
+*/
+void deleteDoublyList(struct DoublyList* ptrList);
+
+/**
  * Função que remove um nó de uma lista e o retorna.
  * 
  * Diferente de suas contrapartes "delete", a função pop tira um nó de uma lista e não libera a memória ocupada por ele.
