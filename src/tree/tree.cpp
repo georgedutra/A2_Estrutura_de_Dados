@@ -126,6 +126,22 @@ struct TreeNode* deleteTreeNode(struct TreeNode* ptrCurrentNode, int iData)
     return ptrCurrentNode; // Retorna a árvore modificada
 }   
 
+void deleteTree(struct TreeNode** ptrRoot, struct TreeNode* ptrNodeDelete)
+{
+    if (ptrNodeDelete == nullptr) return;
+
+    deleteTree(ptrRoot, ptrNodeDelete -> ptrLeft);
+    deleteTree(ptrRoot, ptrNodeDelete -> ptrRight);
+    if (*ptrRoot != ptrNodeDelete)
+    {
+        delete(ptrNodeDelete);
+    }
+    else
+    {
+        *ptrRoot = nullptr;
+    }
+}
+
 void treeToDoublyList(struct DoublyList* ptrList, struct TreeNode* ptrNode)
 {
     if (ptrNode == nullptr) return;
@@ -142,6 +158,7 @@ void bubbleSortTree(struct TreeNode* ptrRoot)
     treeToDoublyList(ptrList, ptrRoot);
     bubbleSort(ptrList);
     printList(ptrList);
+    deleteDoublyList(ptrList);
 }
 
 void selectionSortTree(struct TreeNode* ptrRoot)
@@ -150,6 +167,7 @@ void selectionSortTree(struct TreeNode* ptrRoot)
     treeToDoublyList(ptrList, ptrRoot);
     selectionSort(ptrList, ptrList -> ptrHead);
     printList(ptrList);
+    deleteDoublyList(ptrList);
 }
 
 
@@ -159,6 +177,7 @@ void insertionSortTree(struct TreeNode* ptrRoot)
     treeToDoublyList(ptrList, ptrRoot);
     insertionSort(ptrList);
     printList(ptrList);
+    deleteDoublyList(ptrList);
 }
 
 
@@ -168,4 +187,5 @@ void shellSortTree(struct TreeNode* ptrRoot)
     treeToDoublyList(ptrList, ptrRoot);
     shellSort(ptrList, getLenght(ptrList));
     printList(ptrList);
+    deleteDoublyList(ptrList);
 }

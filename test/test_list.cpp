@@ -129,6 +129,18 @@ int main()
     printList(testList4);
     cout << endl;
 
+    cout << "===================================================\n"
+    << "Teste da função deleteDoublyList:\n" << endl;
+
+    cout << "Lista: ";
+    printList(testList);
+
+    deleteDoublyList(testList);
+
+    cout << "Lista após deleteDoublyList: ";
+    printList(testList);
+    cout << endl;
+
     cout << "===================================================\n" 
     << "Fim dos Testes\n"
     <<"===================================================\n"

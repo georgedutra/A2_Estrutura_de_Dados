@@ -92,6 +92,14 @@ struct TreeNode* bestSubstitute(struct TreeNode* ptrNode);
 struct TreeNode* deleteTreeNode(struct TreeNode* ptrCurrentNode, int iData);
 
 /**
+ * Função que deleta uma árvore binária de busca.
+ * 
+ * @param ptrRoot Ponteiro para a raiz da árvore a ser deletada.
+ * @param ptrNodeDelete Ponteiro para o nó a ser deletado.
+*/
+void deleteTree(struct TreeNode** ptrRoot, struct TreeNode* ptrNodeDelete);
+
+/**
  * Função que converte uma árvore binária de busca em uma lista duplamente encadeada, ordenada em preOrder
  * 
  * @param ptrList Ponteiro para a lista duplamente encadeada que receberá os valores da árvore.
