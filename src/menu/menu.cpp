@@ -1,17 +1,22 @@
-/* g++ -o menu.exe .\menu.cpp ..\tree\tree.cpp ..\analysis\analysis.cpp ..\user\user.cpp
+/* g++ -o menu.exe .\menu.cpp ..\tree\tree.cpp ..\analysis\analysis.cpp ..\user\user.cpp ..\list\list.cpp 
 */
 
 
 #include <iostream>
+#include <windows.h>
 #include "menu.h"
 #include "..\tree\tree.h"
 #include "..\analysis\analysis.h"
 #include "..\user\user.h"
+#include "..\list\list.h"
+
+#pragma execution_character_set( "utf-8" )
 
 using namespace std;
 
 void menuAnalysis(struct TreeNode* ptrTree)
-{
+{ 
+    SetConsoleOutputCP( 65001 );
     char cOption;
 
     // Limpar a tela
@@ -93,9 +98,10 @@ void menuConstruction()
 {
     char cOption;
     TreeNode* ptrTree = nullptr;
-
+    SetConsoleOutputCP( 65001 );
     while (true) 
     {
+        
         // Limpar a tela
         cout << "\033[2J\033[1;1H";
 
