@@ -33,7 +33,11 @@ void menuAnalysis(struct TreeNode* ptrTree)
         cout << "6. Sua árvore é completa?" << endl;
         cout << "7. Sua árvore é perfeita?" << endl;
         cout << "8. Exiba sua árvore em BFS aqui" << endl;
-        cout << "9. Sair" << endl;
+        cout << "9. Ordene sua árvore com Bubble Sort" << endl;
+        cout << "10. Ordene sua árvore com Selection Sort" << endl;
+        cout << "11. Ordene sua árvore com Insertion Sort" << endl;
+        cout << "12. Ordene sua árvore com Shell Sort" << endl;
+        cout << "13. Volte ao menu anterior" << endl;
         cout << "==========================" << endl;
         cout << "Escolha uma opção: ";
 
@@ -79,7 +83,19 @@ void menuAnalysis(struct TreeNode* ptrTree)
                 printBFS(ptrTree);
                 break;
             case '9':
-                cout << "Saindo..." << endl;
+                bubbleSortTree(ptrTree);
+                break;
+            case '10':
+                selectionSortTree(ptrTree);
+                break;
+            case '11':
+                insertionSortTree(ptrTree);
+                break;
+            case '12':
+                shellSortTree(ptrTree);
+                break;
+            case '13':
+                cout << "Voltando..." << endl;
                 return;
             default:
                 cout << "Opção inválida!" << endl;
@@ -118,11 +134,29 @@ void menuConstruction()
         switch (cOption) 
         {
             case '1':
+            if (ptrTree != nullptr)
+            {
+                deleteTree(&ptrTree, ptrTree);
                 ptrTree = userReadFile();
                 break;
-            case '2':
-                ptrTree = userCreateTree();
+            }
+            else
+            {
+                ptrTree = userReadFile();
                 break;
+            }
+            case '2':
+                if (ptrTree != nullptr)
+                {
+                    deleteTree(&ptrTree, ptrTree);
+                    ptrTree = userCreateTree();
+                    break;
+                }
+                else
+                {
+                    ptrTree = userCreateTree();
+                    break;
+                }
             case '3':
                 if (ptrTree == nullptr)
                 {
