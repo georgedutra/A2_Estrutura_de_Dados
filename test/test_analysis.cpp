@@ -27,7 +27,8 @@ int main()
           << "===================================================" << endl;
 
      cout << "Teste da função isComplete:\n"
-          << "Criando uma árvore completa e uma incompleta e verificando se são completas.\n"<< endl;
+          << "Criando uma árvore completa e uma incompleta e verificando se são completas.\n"
+          << endl;
 
      TreeNode *testRoot = newTreeNode(10);
      testRoot = insertTreeNode(testRoot, 7);
@@ -66,9 +67,9 @@ int main()
      else
           cout << "A árvore é incompleta." << endl;
 
-     cout << "\n===================================================\n"<< endl;
-     cout << "Teste da função isPerfect:\n"<< endl;
-     cout << "Criando uma árvore perfeita e uma imperfeita e verificando se são perfeitas.\n"<< endl;
+     cout << "\n===================================================\n" << endl;
+     cout << "Teste da função isPerfect:\n" << endl;
+     cout << "Criando uma árvore perfeita e uma imperfeita e verificando se são perfeitas.\n" << endl;
 
      TreeNode *testRoot3 = newTreeNode(10);
      testRoot3 = insertTreeNode(testRoot3, 7);
@@ -103,7 +104,7 @@ int main()
      else
           cout << "A árvore não é perfeita." << endl;
 
-     cout << "Criando uma árvore completa e imperfeita e verificando.\n"<< endl;
+     cout << "Criando uma árvore completa e imperfeita e verificando.\n" << endl;
 
      cout << "\nÁrvore completa e imperfeita: ";
      traverseInOrder(testRoot);
@@ -114,7 +115,8 @@ int main()
      else
           cout << "A árvore é completa e imperfeita." << endl;
 
-     cout << "\n===================================================\n"<< endl;
+     cout << "\n===================================================\n"
+          << endl;
 
      cout << "Teste da função getHeight:\n" << endl;
      cout << "Criando árvores e verificando suas alturas: \n" << endl;
@@ -185,7 +187,7 @@ int main()
 
      cout << "\n" << endl;
 
-     cout << "\n===================================================\n"<< endl;
+     cout << "\n===================================================\n" << endl;
 
      cout << "Teste da função getSize:\n" << endl;
      cout << "Criando árvores e verificando seus tamanhos: \n" << endl;
@@ -251,6 +253,46 @@ int main()
      cout << "Tamanho real da árvore: 10" << endl;
      cout << "Tamanho calculado da árvore: " << getSize(testRoot12) << endl;
 
-     cout << "\n===================================================\n"<< endl;
+     cout << "\n===================================================\n" << endl;
+
+     cout << "Teste da função printBFS:\n" << endl;
+     cout << "Criando árvores e imprimindo-as em ordem BFS: \n" << endl;
+
+     TreeNode *testRoot13 = newTreeNode(10);
+     testRoot13 = insertTreeNode(testRoot13, 7);
+     testRoot13 = insertTreeNode(testRoot13, 15);
+     testRoot13 = insertTreeNode(testRoot13, 2);
+     testRoot13 = insertTreeNode(testRoot13, 8);
+     testRoot13 = insertTreeNode(testRoot13, 12);
+     testRoot13 = insertTreeNode(testRoot13, 20);
+
+     cout << "Árvore perfeita: ";
+     traverseInOrder(testRoot13);
+     cout << endl;
+
+     cout << "Árvore em ordem BFS: ";
+     printBFS(testRoot13);
+
+     cout << "\n" << endl;
+
+     TreeNode *testRoot14 = newTreeNode(10);
+     testRoot14 = insertTreeNode(testRoot14, 7);
+     testRoot14 = insertTreeNode(testRoot14, 15);
+     testRoot14 = insertTreeNode(testRoot14, 2);
+     testRoot14 = insertTreeNode(testRoot14, 8);
+     testRoot14 = insertTreeNode(testRoot14, 12);
+     testRoot14 = insertTreeNode(testRoot14, 20);
+     testRoot14 = insertTreeNode(testRoot14, 1);
+     testRoot14 = insertTreeNode(testRoot14, 0);
+     testRoot14 = insertTreeNode(testRoot14, 22);
+     testRoot14 = insertTreeNode(testRoot14, 21);
+     testRoot14 = insertTreeNode(testRoot14, 25);
+
+     cout << "Árvore imperfeita: ";
+     traverseInOrder(testRoot14);
+     cout << endl;
+
+     cout << "Árvore em ordem BFS: ";
+     printBFS(testRoot14);
 
 }

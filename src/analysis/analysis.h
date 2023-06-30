@@ -39,3 +39,10 @@ int getHeight(struct TreeNode *ptrTree);
  * @return Tamanho da árvore
  */
 int getSize(struct TreeNode *ptrTree);
+
+/**
+ * Função que imprime os nós de uma árvore binária de busca em ordem BFS.
+ * 
+ * @param ptrTree Ponteiro para a raiz da árvore a ser impressa
+*/
+void printBFS(struct TreeNode *ptrTree);
