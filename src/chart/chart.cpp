@@ -187,7 +187,7 @@ void graphicSelectionSort(struct TreeNode* ptrRoot)
             }
         }
     }
-    drawFrame(ptrList, arriGrapich, iMaxCalc, iLength, ptrOuter -> ptrPrev, ptrInner -> ptrPrev);
+    drawFrame(ptrList, arriGrapich, iMaxCalc, iLength, ptrList-> ptrTail -> ptrPrev, ptrList -> ptrTail);
 
     deleteDoublyList(ptrList);
 

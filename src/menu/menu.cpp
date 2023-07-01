@@ -1,6 +1,5 @@
 /* Este arquivo cria o menu de interação com o usuário. 
 * Ele é responsável por chamar as funções de criação de árvore, leitura de arquivo e análise de árvore. 
-* g++ -o menu.exe .\menu.cpp ..\tree\tree.cpp ..\analysis\analysis.cpp ..\user\user.cpp ..\list\list.cpp 
 */
 
 #include <iostream>
@@ -11,6 +10,7 @@
 #include "..\analysis\analysis.h"
 #include "..\user\user.h"
 #include "..\list\list.h"
+#include "..\chart\chart.h"
 
 #pragma execution_character_set( "utf-8" )
 
@@ -42,7 +42,13 @@ void menuAnalysis(struct TreeNode* ptrTree)
         cout << "j. Ordene sua árvore com Selection Sort" << endl;
         cout << "k. Ordene sua árvore com Insertion Sort" << endl;
         cout << "l. Ordene sua árvore com Shell Sort" << endl;
-        cout << "m. Volte ao menu anterior" << endl;
+        cout << "Para fazer um gráfico, maximize o terminal e escolha uma das opções abaixo:" << endl;
+        cout << "É necessário que sua árvore tenha no máximo 20 nós para que o gráfico seja feito!" << endl;
+        cout << "m. Faça seu gráfico com Bubble Sort" << endl;
+        cout << "n. Faça seu gráfico com Selection Sort" << endl;
+        cout << "o. Faça seu gráfico com Insertion Sort" << endl;
+        cout << "p. Faça seu gráfico com Shell Sort" << endl;
+        cout << "q. Voltar" << endl;
         cout << "==========================" << endl;
         cout << "Escolha uma opção: ";
 
@@ -135,7 +141,59 @@ void menuAnalysis(struct TreeNode* ptrTree)
                 end = chrono::high_resolution_clock::now();
                 cout << "Tempo de execução: " << chrono::duration_cast<chrono::nanoseconds>(end - start).count() << " nanosegundos" << endl;
                 break;
-            case 'm':
+            case 'm': 
+                start = chrono::high_resolution_clock::now();
+                if (getSize(ptrTree) > 20)
+                {
+                    cout << "Sua árvore possui mais de 20 nós. Não é possível fazer o gráfico." << endl;
+                }
+                else
+                {
+                    graphicBubbleSort(ptrTree);
+                }
+                end = chrono::high_resolution_clock::now();
+                cout << "Tempo de execução: " << chrono::duration_cast<chrono::seconds>(end - start).count() << " segundos" << endl;
+                break;
+            case 'n':
+                start = chrono::high_resolution_clock::now();
+                if (getSize(ptrTree) > 20)
+                {
+                    cout << "Sua árvore possui mais de 20 nós. Não é possível fazer o gráfico." << endl;
+                }
+                else
+                {
+                    graphicSelectionSort(ptrTree);
+                }
+                end = chrono::high_resolution_clock::now();
+                cout << "Tempo de execução: " << chrono::duration_cast<chrono::seconds>(end - start).count() << " segundos" << endl;
+                break;
+            case 'o':
+                start = chrono::high_resolution_clock::now();
+                if (getSize(ptrTree) > 20)
+                {
+                    cout << "Sua árvore possui mais de 20 nós. Não é possível fazer o gráfico." << endl;
+                }
+                else
+                {
+                    graphicInsertionSort(ptrTree);
+                }
+                end = chrono::high_resolution_clock::now();
+                cout << "Tempo de execução: " << chrono::duration_cast<chrono::seconds>(end - start).count() << " segundos" << endl;
+                break;
+            case 'p':
+                start = chrono::high_resolution_clock::now();
+                if (getSize(ptrTree) > 20)
+                {
+                    cout << "Sua árvore possui mais de 20 nós. Não é possível fazer o gráfico." << endl;
+                }
+                else
+                {
+                    graphicShellSort(ptrTree);
+                }
+                end = chrono::high_resolution_clock::now();
+                cout << "Tempo de execução: " << chrono::duration_cast<chrono::seconds>(end - start).count() << " segundos" << endl;
+                break;
+            case 'q':
                 cout << "Voltando..." << endl;
                 return;
             default:
