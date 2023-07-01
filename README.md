@@ -19,6 +19,5 @@ O projeto foi desenvolvido com C++ 17 (ou superior), e foi separado em duas part
 - Para a compilação do aplicativo, acesse a pasta `src`, e compile ali o projeto. Por exemplo, com o compilador *g++* instalado, abra o terminal na pasta `src` e execute o comando abaixo:
 
         g++ -o main.exe main.cpp analysis\analysis.cpp list\list.cpp menu\menu.cpp tree\tree.cpp user\user.cpp chart\chart.cpp
-*/
 
 Após compilar, basta executar como administrador o arquivo `main.exe` gerado.
