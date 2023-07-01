@@ -1,5 +1,5 @@
 Para compilar os arquivos de teste, com o compilador g++ devidamente instalado no dispositivo Windows, 
-coloque cd test e depois basta colar no prompt o respectivo comando, e executar o arquivo gerado como administrador.
+basta abrir o terminal na pasta \test, colar o respectivo comando, e executar o arquivo gerado como administrador.
 
 Para testar as funções de construção de árvore binária:
 
